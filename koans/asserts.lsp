@@ -13,35 +13,35 @@
 ;;   limitations under the License.
 
 
-; Concept: What do you do to go through the lisp koans?  You fill in
-; the blanks, or otherwise fix the lisp code so that the
-; code within the 'define-test' blocks passes.
+                                        ; Concept: What do you do to go through the lisp koans?  You fill in
+                                        ; the blanks, or otherwise fix the lisp code so that the
+                                        ; code within the 'define-test' blocks passes.
 
 
-; In common lisp, "True" and "False" are represented by "t" and "nil".
-; More in a future lesson, but for now, consider t to be true,
-; and nil to be false.
+                                        ; In common lisp, "True" and "False" are represented by "t" and "nil".
+                                        ; More in a future lesson, but for now, consider t to be true,
+                                        ; and nil to be false.
 
 
 (define-test assert-true
     "t is true.  Replace the blank with a t"
-    (assert-true ___))
+  (assert-true t))
 
 (define-test assert-false
     "nil is false"
-    (assert-false ___))
+  (assert-false nil))
 
 (define-test fill-in-the-blank
     "sometimes you will need to fill the blank to complete"
-    (assert-equal 2 ___))
+  (assert-equal 2 2))
 
 (define-test fill-in-the-blank-string
-    (assert-equal ___ "hello world"))
+    (assert-equal "hello world" "hello world"))
 
 (define-test test-true-or-false
     "sometimes you will be asked to evaluate whether statements 
      are true (t) or false (nil)"
-    (true-or-false? ___ (equal 34 34))
-    (true-or-false? ___ (equal 19 78)))
+  (true-or-false? t (equal 34 34))
+  (true-or-false? nil (equal 19 78)))
 
 
