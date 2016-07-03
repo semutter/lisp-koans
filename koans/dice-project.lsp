@@ -22,16 +22,19 @@
 
 ;;  YOU WRITE THIS PART:
 (defclass dice-set ()
-  () ;; WRITE DICE-SET CLASS BODY HERE
-)
+  (dice-values) ;; WRITE DICE-SET CLASS BODY HERE
+  )
 
 (defmethod get-values ((object dice-set))
   ;; WRITE GET-VALUES METHOD DEFINITION HERE
-)
+  (slot-value object 'dice-values)
+  )
 
 (defmethod roll (how-many (object dice-set))
   ;; WRITE ROLL METHOD DEFINITION HERE
-)
+  (setf (slot-value object 'dice-values)
+        (loop for i from 1 to how-many
+           collecting (+ 1 (random 6)))))
 
 
 (define-test test-create-dice-set
@@ -73,7 +76,7 @@
       (assert-false (equal first-time second-time))))
 
 (define-test test-you-can-roll-different-numbers-of-dice
-;; tests count parameter of how many dice to roll
+    ;; tests count parameter of how many dice to roll
     (let ((dice (make-instance 'dice-set)))
       (assert-equal 5 (length (roll 5 dice)))
       (assert-equal 100 (length (roll 100 dice)))
